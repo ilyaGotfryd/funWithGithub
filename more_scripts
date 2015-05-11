@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# bucket of code
+
+press_enter()
+{
+	echo "press enter."
+	read
+	clear
+}
+
+selection=
+until [ "$selection" = "0" ]; do
+cat << _MENU_
+	1 - Dipsplay free disk space
+	2 - Display free memory
+
+	0 - Exit
+	Enter selection:
+_MENU_
+	read selection
+	echo ""
+	case $selection in
+		1 ) df ; press_enter;;
+		2 ) free ; press_enter;;
+		0 ) exit ;;
+		* ) echo " please select 1,2 or 0"; press_enter
+	esac
+done

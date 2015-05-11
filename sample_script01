@@ -1,0 +1,39 @@
+#!/bin/bash
+
+first_num=0
+second_num=0
+
+echo -n "Enter the first number ->"
+read first_num
+echo -n "Enter the second number ->"
+read second_num
+
+echo "first_num + second_num = $((first_num + second_num))"
+echo "first number * second number = $((first_num * second_num))"
+echo "first number / second number = $((first_num / second_num))"
+echo "first number % second number = $((first_num % second_num))"
+
+check_even=0;
+echo -n "Enter a number -->"
+read check_even
+
+if [ $((check_even % 2)) = "0" ]; then
+	echo "The number $check_even is even"
+else
+	echo "The number $check_even is odd"
+fi
+
+# break seconds into hours minutes seconds
+
+num_seconds=0
+
+echo "Provide a number of seconds>"
+read num_seconds
+
+hours=$((num_seconds/3600))
+num_seconds=$((num_seconds%3600))
+minutes=$((num_seconds/60))
+num_seconds=$((num_seconds%60))
+
+echo "$hours hour(s) $minutes minute(s) $num_seconds second(s)"
+

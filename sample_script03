@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "you have $# parameters"
+
+while [ "$1" != "" ]; do
+	echo " parameter 1 equals to $1"
+	echo " you now have $# parameters"
+	shift
+done
